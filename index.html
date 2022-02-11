@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Simulator</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="main">
+        <div class="left" onclick="spinWheel()">
+            <div class="wheel">Wheel</div>
+        </div>
+        <div class="right">
+            <div class="table">Table</div>
+            <div class="controls">
+                <div class="bet control-item"><div class="polett"><p class="bet-value">1</p></div></div>
+                <div class="bet control-item"><div class="polett"><p class="bet-value">5</p></div></div>
+                <div class="bet control-item"><div class="polett"><p class="bet-value">10</p></div></div>
+                <div class="bet control-item"><div class="polett"><p class="bet-value">50</p></div></div>
+                <div class="bet control-item"><div class="polett"><p class="bet-value">100</p></div></div>
+                <div class="clear control-item">Clear</div>
+                <div class="double control-item">Double</div>
+                <div class="rebet control-item">Re-bet</div>
+                <div class="spin control-item" onclick="spinWheel()">Spin</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js.js"></script>
+</html>
