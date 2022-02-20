@@ -1,46 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Ewert&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+@font-face {
+    font-family: 'Casino';
+    src: URL('/fonts/Casino3DLines-Italic.ttf') format('truetype');
+  }
+
+:root {
+    --green-font: rgb(95, 255, 95); 
+}
+
 * {
     margin: 0;
     user-select: none;
+    font-family: 'Casino';
+    user-select: none;
+}
+
+body {
+    background-image: url(/images/background.jpg);
 }
 
 .main {
-    background-color: rgb(221, 226, 221);
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: hidden;
+    
 }
 
 .left {
-    background-color: green;
+    background-color: rgba(40, 90, 47, 0.329);
     width: 40%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content:flex-start;
+    box-sizing: border-box;
+    border-right: black 2px solid;
+    color: var(--green-font);
 }
 
+.game-controls {
+    width: 100%;
+    height: 28%;
+    background: rgba(40, 90, 47, 0.329);
+    display: flex;
+}
+
+.game-control-item {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: relative;
+}
+
+.game-control-item-label {
+    font-size: 1.5rem;
+    height: 3rem;
+    text-align: center;
+}
+
+.spin-speed {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 20px;
+    border-radius: 10px;  
+    background: rgba(157, 255, 135, 0.308);  
+}
+
+.spin-speed::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    background: rgb(4, 177, 16);
+}
+
+.martingale-button {
+    width: 55%;
+    height: 15%;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.61);
+    background: rgb(134, 53, 53);
+    box-shadow: rgba(0 0 0 / 51%) 0px 6px 10px 2px;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.martingale-button:hover {
+    background: rgb(160, 63, 63);
+    cursor: pointer;
+}
+
+.martingale-button:active {
+    background: rgb(99, 39, 39);
+    cursor: pointer;
+}
+
+.reset-bank-label {
+    min-height: 3rem;
+}
+
+.reset-bank-button {
+    width: 55%;
+    height: 15%;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.61);
+    background: rgb(134, 53, 53);
+    box-shadow: rgba(0 0 0 / 51%) 0px 6px 10px 2px;
+    font-size: 1.3rem;
+    color: black;
+}
+
+.reset-bank-button:hover {
+    background: rgb(160, 63, 63);
+    cursor: pointer;
+}
+
+.reset-bank-button:active {
+    background: rgb(99, 39, 39);
+    cursor: pointer;
+}
+
+.coom-button {
+    width: 55%;
+    height: 15%;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.61);
+    background: rgb(134, 53, 53);
+    box-shadow: rgba(0 0 0 / 51%) 0px 6px 10px 2px;
+    font-size: 1.3rem;
+    color: black;
+    z-index: 100;
+}
+
+.coom-button:hover {
+    background: rgb(161, 62, 62);
+}
+
+.coom-button:active {
+    background: rgb(119, 46, 46);
+}
+
+
+.spin-speed:hover {
+    cursor: grab;
+}
+
+.spin-speed:active {
+    cursor: grabbing;
+}
+
+.wheel {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+}
+
+.wheel-texture {
+    width: 50%;
+}
+
+.number-hit {
+    font-size: 3rem;
+    text-align: center;
+}
+
+
 .right {
-    background-color: indianred;
+    background-color: rgba(40, 90, 47, 0.329);
     width: 60%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
+    color: var(--green-font);
+}
+
+.info {
+    width: 100%;
+    height: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 7rem;
 }
 
 .table {
     width: 100%;
     height: 60%;
-    background-color: lightblue;
+    background-color: rgba(40, 90, 47, 0.027);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-top: black 2px solid;
+    border-bottom: black 2px solid;
 }
 
 .controls {
     width: 100%;
-    height: 20%;
-    background-color: rgb(128, 240, 225);
+    height: 12%;
+    background-color: rgba(40, 90, 47, 0.329);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -52,14 +225,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.5vw;
+    color: black;
 }
 
 .control-item:hover {
-    background-color: lightcoral;
+    background-color: rgba(28, 155, 16, 0.432);
 }
 
 .control-item:active {
-    background-color: rgb(160, 76, 76);
+    background-color: rgba(16, 95, 9, 0.432);
 }
 
 .polett {
@@ -67,12 +242,44 @@
     width: 90%;
     height: 0;
     padding-bottom: 90%;
-    border-radius: 50px;
-    background: rgb(122, 23, 23);
+    background: rgba(94, 86, 86, 0);
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.polett-texture {
+    display: block;
+    width: 90%;
+    position: absolute;
+    user-select: none;
+    -webkit-user-drag: none;
+    margin-top: 5px;
 }
 
 .bet-value {
-    width: 100%;
-    height: 100%;
-    text-align: center;
+    z-index: 1;
+    margin-top: 35%;
+    font-weight: 500;
+    font-size: 1.1vw;
+}
+
+.tableTexture {
+    width: 80%;
+    height: 70%;
+    border: 2px solid black;
+}
+
+
+/*Helpers*/
+
+.rightborder {
+    border-right: 2px solid rgba(0, 0, 0, 0.527);
+}
+
+.crazygreen {
+    color: var(--green-font);
 }

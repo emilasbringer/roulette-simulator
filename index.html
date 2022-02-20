@@ -6,24 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roulette Simulator</title>
     <link rel="stylesheet" href="css.css">
+    <link rel="icon" href="/images/chip.png">
 </head>
-<body>
+<body onkeypress="keyDown(event)" onkeyup="keyUp(event)">
     <div class="main">
-        <div class="left" onclick="spinWheel()">
-            <div class="wheel">Wheel</div>
+        <div class="left">
+            <div class="game-controls">
+                
+
+                <div class="game-control-item rightborder">
+                    <div class="game-control-item-label">Spin Speed</div>
+                    <input type="range" min="100" max="10000" value="100" class="spin-speed" onmouseup="setSpinSpeed()">
+                </div>
+                <div class="game-control-item rightborder">
+                    <div class="game-control-item-label">Martingale Strategy</div>
+                    <button class="martingale-button" onclick="switchMartingale()">Disabled</button>
+                </div>
+                <div class="game-control-item rightborder">
+                    <div class="game-control-item-label reset-bank-label">Reset Bank</div>
+                    <button class="reset-bank-button" onclick="resetBank()">Reset</button>
+                </div>
+                <div class="game-control-item coom-item">
+                    <div class="game-control-item-label">CUM-CUM-CUM</div>
+                    <button class="coom-button" onclick="coom()">Coom</button>
+                </div>
+            </div>
+            <div class="wheel"><img src="/images/wheel.png" alt="Wheel" class="wheel-texture"></div>
+            <div class="number-hit"> <p>Number hit:</p><p><span class="hit-value">0</span></p> </div>
         </div>
         <div class="right">
-            <div class="table">Table</div>
+            <div class="info">
+                <div class="bank">Bank: <span class="bankValue">1000</span></div>
+                <div class="bet">Bet: <span class="betValue">0</span></div>
+            </div>
+            <div class="table"><div class="tableTexture"></div></div>
             <div class="controls">
-                <div class="bet control-item"><div class="polett"><p class="bet-value">1</p></div></div>
-                <div class="bet control-item"><div class="polett"><p class="bet-value">5</p></div></div>
-                <div class="bet control-item"><div class="polett"><p class="bet-value">10</p></div></div>
-                <div class="bet control-item"><div class="polett"><p class="bet-value">50</p></div></div>
-                <div class="bet control-item"><div class="polett"><p class="bet-value">100</p></div></div>
-                <div class="clear control-item">Clear</div>
-                <div class="double control-item">Double</div>
-                <div class="rebet control-item">Re-bet</div>
-                <div class="spin control-item" onclick="spinWheel()">Spin</div>
+                <div class="bet control-item" onmousedown="betAmmount(5)"><div class="polett"><img src="/images/chip.png" class="polett-texture"><div class="bet-value">5</div></div></div>
+                <div class="bet control-item" onclick="betAmmount(50)"><div class="polett"><img src="/images/chip.png" class="polett-texture"><div class="bet-value">50</div></div></div>
+                <div class="bet control-item" onclick="betAmmount(100)"><div class="polett"><img src="/images/chip.png" class="polett-texture"><div class="bet-value">100</div></div></div>
+                <div class="bet control-item" onclick="betAmmount(500)"><div class="polett"><img src="/images/chip.png" class="polett-texture"><div class="bet-value">500</div></div></div>
+                <div class="bet control-item" onclick="betAmmount(1000)"><div class="polett"><img src="/images/chip.png" class="polett-texture"><div class="bet-value">1000</div></div></div>
+                <div class="clear control-item crazygreen" onclick="clearBet()">Clear</div>
+                <div class="double control-item crazygreen" onclick="doubleBet()">Double</div>
+                <div class="rebet control-item crazygreen" onclick="reBet()">Re-bet</div>
+                <div class="spin control-item crazygreen" onclick="spinWheel()">Spin</div>
             </div>
         </div>
     </div>
